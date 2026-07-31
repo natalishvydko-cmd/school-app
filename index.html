@@ -170,35 +170,27 @@
             box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
         }
 
+        .reviews-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
         .review-item {
-            background: #f8f9fc;
-            border-radius: 12px;
-            padding: 16px;
-            margin-bottom: 12px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 12px;
             border: 1px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: all 0.2s ease;
         }
 
         .review-item img {
             width: 100%;
-            border-radius: 8px;
-            margin-top: 8px;
-        }
-
-        .review-item .review-text {
-            font-size: 14px;
-            color: #374151;
-            line-height: 1.5;
-        }
-
-        .review-item .review-author {
-            font-size: 13px;
-            font-weight: 600;
-            color: #1a1a2e;
-            margin-top: 6px;
-        }
-
-        .review-item.highlight {
-            border: 2px solid #f97316;
+            height: auto;
+            border-radius: 10px;
+            display: block;
         }
 
         .form-group {
@@ -355,40 +347,26 @@
                 <span class="header-title">⭐ Отзывы учеников</span>
             </div>
 
-            <!-- ОТЗЫВ 1 -->
-            <div class="review-item">
-                <div class="review-text">
-                    "Репетитор по математике и физике. Владислав, благодарю за подготовку к ЕГЭ по физике. Почти с нуля, за месяц подготовил на 61 балл, цена занятий самая адекватная, которую встречал среди репетиторов в Казани за такую подготовку. Спасибо!"
+            <div class="reviews-grid">
+                <!-- Отзыв 1 -->
+                <div class="review-item">
+                    <img src="https://i.postimg.cc/7G3bgMrN/2026-08-01-02-00-58.png" alt="Отзыв 1">
                 </div>
-                <div class="review-author">— kvartalStore, клиент</div>
-                <img src="https://i.postimg.cc/pT78MqGx/2026-08-01-02-01-49.png" alt="Отзыв Владислава">
-            </div>
 
-            <!-- ОТЗЫВ 2 -->
-            <div class="review-item">
-                <div class="review-text">
-                    "Ребенок перешел в математический класс и нашей целью было не отставать по программе. Владислав Анатольевич легко нашел подход, занятия проводит интересно, доходчиво. С самого начала работы была приятно удивлена профессионализмом Владислава и тем, как он сумел заинтересовать ребенка. Атмосфера на занятиях дружественная и комфортная. Также хочу отметить, что во внеурочное время Владислав всегда на связи, не отказывает с решением различных задач. Сейчас активно готовимся к сдаче ОГЭ."
+                <!-- Отзыв 2 -->
+                <div class="review-item">
+                    <img src="https://i.postimg.cc/pT78MqGx/2026-08-01-02-01-49.png" alt="Отзыв 2">
                 </div>
-                <div class="review-author">— Анна, мама ученика</div>
-                <img src="https://i.postimg.cc/76c7rmsx/2026-08-01-02-10-10.png" alt="Отзыв Анны">
-            </div>
 
-            <!-- ОТЗЫВ 3 -->
-            <div class="review-item">
-                <div class="review-text">
-                    "✍️ Здесь будет текст твоего третьего отзыва. Посмотри на скриншот и напиши, что там написано."
+                <!-- Отзыв 3 -->
+                <div class="review-item">
+                    <img src="https://i.postimg.cc/cHjYGX90/2026-08-01-02-05-57.png" alt="Отзыв 3">
                 </div>
-                <div class="review-author">— Имя ученика</div>
-                <img src="https://i.postimg.cc/cHjYGX90/2026-08-01-02-05-57.png" alt="Третий отзыв">
-            </div>
 
-            <!-- ОТЗЫВ 4 (заглушка, если нет фото) -->
-            <div class="review-item highlight">
-                <div class="review-text">
-                    "💬 Здесь будет твой четвёртый отзыв. Если у тебя есть ещё один скриншот, просто замени ссылку и текст."
+                <!-- Отзыв 4 -->
+                <div class="review-item">
+                    <img src="https://i.postimg.cc/76c7rmsx/2026-08-01-02-10-10.png" alt="Отзыв 4">
                 </div>
-                <div class="review-author">— Имя ученика</div>
-                <img src="https://via.placeholder.com/400x200/f97316/ffffff?text=+ЧЕТВЁРТЫЙ+ОТЗЫВ" alt="Четвёртый отзыв">
             </div>
 
             <button class="btn-primary" onclick="showScreen('bookingScreen')">
@@ -454,8 +432,8 @@
         // ================================================================
         // ↓↓↓ ВСТАВЬ СВОЙ ТОКЕН И ID ↓↓↓
         // ================================================================
-        const BOT_TOKEN = '8470920856:AAHRzs07WBdwKjjsfYaHBXsxM6_vsyxyv4g';
-        const CHAT_ID = '6691957843';
+        const BOT_TOKEN = 'YOUR_BOT_TOKEN';
+        const CHAT_ID = 'YOUR_CHAT_ID';
         // ================================================================
 
         function showScreen(screenId) {
