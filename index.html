@@ -53,7 +53,6 @@
             font-weight: 600;
         }
 
-        /* ===== ГЛАВНЫЙ ЭКРАН ===== */
         .hero {
             text-align: center;
             padding: 16px 0 12px;
@@ -82,21 +81,20 @@
             margin: 8px 0 0;
         }
 
-        /* ===== ПРЕИМУЩЕСТВА (ВСЕ ОДИНАКОВЫЕ) ===== */
         .features {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 8px;
-            margin: 12px 0;
+            margin: 16px 0;
         }
 
         .feature {
             background: #f8f9fc;
             border-radius: 10px;
-            padding: 12px 10px;
+            padding: 12px 6px;
             text-align: center;
             border: 1px solid #e5e7eb;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 500;
             color: #1a1a2e;
             transition: all 0.2s ease;
@@ -108,11 +106,10 @@
             margin-bottom: 4px;
         }
 
-        /* ===== КАРТОЧКИ ===== */
         .card {
             background: #f8f9fc;
             border-radius: 12px;
-            padding: 16px 18px;
+            padding: 14px 18px;
             margin-bottom: 10px;
             cursor: pointer;
             transition: all 0.2s;
@@ -155,47 +152,55 @@
 
         .btn-primary {
             width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            padding: 18px;
+            background: linear-gradient(135deg, #f97316, #ea580c);
             color: white;
             border: none;
-            border-radius: 12px;
-            font-size: 17px;
-            font-weight: 600;
+            border-radius: 14px;
+            font-size: 18px;
+            font-weight: 700;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
             margin-top: 8px;
+            box-shadow: 0 4px 16px rgba(249, 115, 22, 0.4);
         }
 
         .btn-primary:active {
-            transform: scale(0.98);
+            transform: scale(0.97);
+            box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
         }
 
-        .contacts {
-            text-align: center;
-            padding: 16px 0 8px;
-            border-top: 1px solid #e5e7eb;
-            margin-top: 12px;
+        .review-item {
+            background: #f8f9fc;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            border: 1px solid #e5e7eb;
         }
 
-        .contacts p {
-            margin: 4px 0;
-            font-size: 15px;
+        .review-item img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 8px;
         }
 
-        .contacts a {
-            color: #1a1a2e;
-            text-decoration: none;
-            font-weight: 500;
+        .review-item .review-text {
+            font-size: 14px;
+            color: #374151;
+            line-height: 1.5;
         }
 
-        .contacts .label {
+        .review-item .review-author {
             font-size: 13px;
-            color: #6b7280;
-            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-top: 6px;
         }
 
-        /* ===== ФОРМА ЗАПИСИ ===== */
+        .review-item.highlight {
+            border: 2px solid #f97316;
+        }
+
         .form-group {
             margin-bottom: 20px;
         }
@@ -298,7 +303,6 @@
                 <p class="subjects-text">Физика · Математика · Английский · Русский</p>
             </div>
 
-            <!-- ПРЕИМУЩЕСТВА (все одинаковые, без чёрного фона) -->
             <div class="features">
                 <div class="feature">
                     <span class="icon">👨‍🏫</span>
@@ -316,17 +320,80 @@
                     <span class="icon">💬</span>
                     На связи 24/7
                 </div>
+                <div class="feature">
+                    <span class="icon">💳</span>
+                    Гибкая и удобная оплата
+                </div>
+                <div class="feature">
+                    <span class="icon">🤖</span>
+                    Бот с материалами 24/7
+                </div>
+            </div>
+
+            <div class="card" onclick="showScreen('reviewsScreen')">
+                <div class="left">
+                    <span class="icon">⭐</span>
+                    <div>
+                        <div class="title">Отзывы наших учеников</div>
+                        <div class="card-sub">Реальные истории успеха</div>
+                    </div>
+                </div>
+                <span class="arrow">→</span>
             </div>
 
             <button class="btn-primary" onclick="showScreen('bookingScreen')">
-                📝 Записаться на урок
+                🔍 Найти репетитора уже сегодня
             </button>
+        </div>
 
-            <div class="contacts">
-                <p class="label">— Или напишите нам напрямую —</p>
-                <p>📞 <a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
-                <p>📱 <a href="https://t.me/russian_english_school">@russian_english_school</a></p>
+        <!-- ============================================================ -->
+        <!-- ЭКРАН ОТЗЫВЫ -->
+        <!-- ============================================================ -->
+        <div id="reviewsScreen" class="screen">
+            <div class="header">
+                <button class="back-btn" onclick="showScreen('mainScreen')">←</button>
+                <span class="header-title">⭐ Отзывы учеников</span>
             </div>
+
+            <!-- ОТЗЫВ 1 -->
+            <div class="review-item">
+                <div class="review-text">
+                    "Репетитор по математике и физике. Владислав, благодарю за подготовку к ЕГЭ по физике. Почти с нуля, за месяц подготовил на 61 балл, цена занятий самая адекватная, которую встречал среди репетиторов в Казани за такую подготовку. Спасибо!"
+                </div>
+                <div class="review-author">— kvartalStore, клиент</div>
+                <img src="https://i.postimg.cc/pT78MqGx/2026-08-01-02-01-49.png" alt="Отзыв Владислава">
+            </div>
+
+            <!-- ОТЗЫВ 2 -->
+            <div class="review-item">
+                <div class="review-text">
+                    "Ребенок перешел в математический класс и нашей целью было не отставать по программе. Владислав Анатольевич легко нашел подход, занятия проводит интересно, доходчиво. С самого начала работы была приятно удивлена профессионализмом Владислава и тем, как он сумел заинтересовать ребенка. Атмосфера на занятиях дружественная и комфортная. Также хочу отметить, что во внеурочное время Владислав всегда на связи, не отказывает с решением различных задач. Сейчас активно готовимся к сдаче ОГЭ."
+                </div>
+                <div class="review-author">— Анна, мама ученика</div>
+                <img src="https://i.postimg.cc/76c7rmsx/2026-08-01-02-10-10.png" alt="Отзыв Анны">
+            </div>
+
+            <!-- ОТЗЫВ 3 -->
+            <div class="review-item">
+                <div class="review-text">
+                    "✍️ Здесь будет текст твоего третьего отзыва. Посмотри на скриншот и напиши, что там написано."
+                </div>
+                <div class="review-author">— Имя ученика</div>
+                <img src="https://i.postimg.cc/cHjYGX90/2026-08-01-02-05-57.png" alt="Третий отзыв">
+            </div>
+
+            <!-- ОТЗЫВ 4 (заглушка, если нет фото) -->
+            <div class="review-item highlight">
+                <div class="review-text">
+                    "💬 Здесь будет твой четвёртый отзыв. Если у тебя есть ещё один скриншот, просто замени ссылку и текст."
+                </div>
+                <div class="review-author">— Имя ученика</div>
+                <img src="https://via.placeholder.com/400x200/f97316/ffffff?text=+ЧЕТВЁРТЫЙ+ОТЗЫВ" alt="Четвёртый отзыв">
+            </div>
+
+            <button class="btn-primary" onclick="showScreen('bookingScreen')">
+                🔍 Найти репетитора уже сегодня
+            </button>
         </div>
 
         <!-- ============================================================ -->
@@ -335,7 +402,7 @@
         <div id="bookingScreen" class="screen">
             <div class="header">
                 <button class="back-btn" onclick="showScreen('mainScreen')">←</button>
-                <span class="header-title">📝 Записаться на урок</span>
+                <span class="header-title">🔍 Найти репетитора</span>
             </div>
 
             <form id="bookingForm">
@@ -377,7 +444,7 @@
                     <input type="tel" class="form-input" id="phone" placeholder="+7 (999) 123-45-67" required>
                 </div>
 
-                <button type="submit" class="btn-primary">✅ Отправить заявку</button>
+                <button type="submit" class="btn-primary">✅ Найти репетитора</button>
             </form>
         </div>
 
@@ -385,10 +452,10 @@
 
     <script>
         // ================================================================
-        // ↓↓↓ ЗАМЕНИТЕ НА СВОИ ДАННЫЕ ↓↓↓
+        // ↓↓↓ ВСТАВЬ СВОЙ ТОКЕН И ID ↓↓↓
         // ================================================================
-        const BOT_TOKEN = '8470920856:AAHOUV4Wty0yzmdGreYSOW_ekKXM9mCO5VY'; // ← Токен от @BotFather
-        const CHAT_ID = '6691957843'; // ← Ваш ID из @userinfobot
+        const BOT_TOKEN = '8470920856:AAHRzs07WBdwKjjsfYaHBXsxM6_vsyxyv4g';
+        const CHAT_ID = '6691957843';
         // ================================================================
 
         function showScreen(screenId) {
@@ -422,7 +489,7 @@
             }
 
             const message =
-                `📝 Новая заявка на урок!\n\n📚 Предмет: ${subject}\n📚 Класс: ${classValue}\n📱 Телефон: ${phone}`;
+                `🔍 Новая заявка на репетитора!\n\n📚 Предмет: ${subject}\n📚 Класс: ${classValue}\n📱 Телефон: ${phone}`;
 
             fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
                     method: 'POST',
