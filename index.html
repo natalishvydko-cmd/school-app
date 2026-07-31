@@ -10,12 +10,14 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #f0f2f5;
             color: #1a1a2e;
             min-height: 100vh;
         }
+
         #app {
             max-width: 420px;
             margin: 0 auto;
@@ -23,18 +25,21 @@
             min-height: 100vh;
             padding: 20px;
         }
+
         .screen {
             display: none;
         }
         .screen.active {
             display: block;
         }
+
         .header {
             display: flex;
             align-items: center;
             gap: 12px;
             padding: 8px 0 20px;
         }
+
         .back-btn {
             background: none;
             border: none;
@@ -42,39 +47,49 @@
             cursor: pointer;
             padding: 4px 8px;
         }
+
         .header-title {
             font-size: 18px;
             font-weight: 600;
         }
+
+        /* ===== ГЛАВНЫЙ ЭКРАН ===== */
         .hero {
             text-align: center;
             padding: 16px 0 12px;
         }
+
         .hero .logo {
             font-size: 56px;
         }
+
         .hero h1 {
             font-size: 22px;
             font-weight: 700;
             margin: 6px 0 2px;
             line-height: 1.3;
         }
+
         .hero .subtitle {
             color: #6b7280;
             font-size: 14px;
         }
+
         .hero .subjects-text {
             font-size: 15px;
             font-weight: 500;
             color: #1a1a2e;
             margin: 8px 0 0;
         }
+
+        /* ===== ПРЕИМУЩЕСТВА (ВСЕ ОДИНАКОВЫЕ) ===== */
         .features {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 8px;
             margin: 12px 0;
         }
+
         .feature {
             background: #f8f9fc;
             border-radius: 10px;
@@ -84,17 +99,60 @@
             font-size: 13px;
             font-weight: 500;
             color: #1a1a2e;
+            transition: all 0.2s ease;
         }
+
         .feature .icon {
             font-size: 20px;
             display: block;
             margin-bottom: 4px;
         }
-        .feature.highlight {
-            background: #1a1a2e;
-            color: white;
-            border-color: #1a1a2e;
+
+        /* ===== КАРТОЧКИ ===== */
+        .card {
+            background: #f8f9fc;
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
+
+        .card:active {
+            transform: scale(0.98);
+            background: #eef0f4;
+        }
+
+        .card .left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card .icon {
+            font-size: 24px;
+        }
+
+        .card .title {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .card .arrow {
+            color: #9ca3af;
+            font-size: 18px;
+        }
+
+        .card-sub {
+            font-size: 13px;
+            color: #6b7280;
+            margin-top: 2px;
+        }
+
         .btn-primary {
             width: 100%;
             padding: 16px;
@@ -108,32 +166,40 @@
             transition: transform 0.2s;
             margin-top: 8px;
         }
+
         .btn-primary:active {
             transform: scale(0.98);
         }
+
         .contacts {
             text-align: center;
             padding: 16px 0 8px;
             border-top: 1px solid #e5e7eb;
             margin-top: 12px;
         }
+
         .contacts p {
             margin: 4px 0;
             font-size: 15px;
         }
+
         .contacts a {
             color: #1a1a2e;
             text-decoration: none;
             font-weight: 500;
         }
+
         .contacts .label {
             font-size: 13px;
             color: #6b7280;
             margin-bottom: 8px;
         }
+
+        /* ===== ФОРМА ЗАПИСИ ===== */
         .form-group {
             margin-bottom: 20px;
         }
+
         .form-group label {
             font-size: 15px;
             font-weight: 600;
@@ -141,11 +207,13 @@
             display: block;
             margin-bottom: 8px;
         }
+
         .subject-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 8px;
         }
+
         .subject-btn {
             padding: 14px;
             border: 2px solid #e5e7eb;
@@ -157,23 +225,28 @@
             transition: all 0.2s;
             text-align: center;
         }
+
         .subject-btn:active {
             transform: scale(0.97);
         }
+
         .subject-btn.selected {
             border-color: #1a1a2e;
             background: #1a1a2e;
             color: white;
         }
+
         .subject-btn .emoji {
             display: block;
             font-size: 28px;
             margin-bottom: 4px;
         }
+
         .class-grid {
             display: flex;
             gap: 8px;
         }
+
         .class-btn {
             width: 48px;
             height: 48px;
@@ -185,14 +258,17 @@
             cursor: pointer;
             transition: all 0.2s;
         }
+
         .class-btn:active {
             transform: scale(0.95);
         }
+
         .class-btn.selected {
             border-color: #1a1a2e;
             background: #1a1a2e;
             color: white;
         }
+
         .form-input {
             width: 100%;
             padding: 14px;
@@ -201,6 +277,7 @@
             font-size: 16px;
             transition: border 0.2s;
         }
+
         .form-input:focus {
             outline: none;
             border-color: #1a1a2e;
@@ -210,6 +287,9 @@
 <body>
     <div id="app">
 
+        <!-- ============================================================ -->
+        <!-- ГЛАВНЫЙ ЭКРАН -->
+        <!-- ============================================================ -->
         <div id="mainScreen" class="screen active">
             <div class="hero">
                 <div class="logo">🏫</div>
@@ -218,6 +298,7 @@
                 <p class="subjects-text">Физика · Математика · Английский · Русский</p>
             </div>
 
+            <!-- ПРЕИМУЩЕСТВА (все одинаковые, без чёрного фона) -->
             <div class="features">
                 <div class="feature">
                     <span class="icon">👨‍🏫</span>
@@ -231,7 +312,7 @@
                     <span class="icon">📚</span>
                     ДЗ после каждого урока
                 </div>
-                <div class="feature highlight">
+                <div class="feature">
                     <span class="icon">💬</span>
                     На связи 24/7
                 </div>
@@ -248,6 +329,9 @@
             </div>
         </div>
 
+        <!-- ============================================================ -->
+        <!-- ФОРМА ЗАПИСИ -->
+        <!-- ============================================================ -->
         <div id="bookingScreen" class="screen">
             <div class="header">
                 <button class="back-btn" onclick="showScreen('mainScreen')">←</button>
@@ -300,9 +384,12 @@
     </div>
 
     <script>
-        // ВСТАВЬТЕ СВОИ ДАННЫЕ ↓↓↓
-        const BOT_TOKEN = 'YOUR_BOT_TOKEN';
-        const CHAT_ID = 'YOUR_CHAT_ID';
+        // ================================================================
+        // ↓↓↓ ЗАМЕНИТЕ НА СВОИ ДАННЫЕ ↓↓↓
+        // ================================================================
+        const BOT_TOKEN = '8470920856:AAHRzs07WBdwKjjsfYaHBXsxM6_vsyxyv4g'; // ← Токен от @BotFather
+        const CHAT_ID = '6691957843'; // ← Ваш ID из @userinfobot
+        // ================================================================
 
         function showScreen(screenId) {
             document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
